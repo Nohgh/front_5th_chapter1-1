@@ -96,7 +96,7 @@
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`,p=()=>(console.log("프로덕션 모드입니다."),`
+`,p=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
       ${g()}
@@ -216,7 +216,7 @@
       ${h()}
     </div>
   </div>
-`),L=()=>{var e,s,n;const t=new r;let l=(e=t.get())==null?void 0:e.username,a=(s=t.get())==null?void 0:s.email,o=(n=t.get())==null?void 0:n.bio;return`
+`,L=()=>{var e,s,n;const t=new r;let l=(e=t.get())==null?void 0:e.username,a=(s=t.get())==null?void 0:s.email,o=(n=t.get())==null?void 0:n.bio;return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
         ${g()}
@@ -283,4 +283,4 @@
         ${h()}
       </div>
     </div>
-  `},$=()=>{let l=new r().isLogin(),o=f()==="hash"?window.location.hash.slice(1):location.pathname;return console.log("프로덕션입니다."),o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
+  `},$=()=>{let l=new r().isLogin(),o=f()==="hash"?window.location.hash.slice(1):location.pathname;return o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
