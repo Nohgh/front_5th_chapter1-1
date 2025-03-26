@@ -15,7 +15,7 @@
       </a>
     </div>
   </main>
-`,p=()=>`
+`,b=()=>`
 	 <main class="bg-gray-100 flex items-center justify-center min-h-screen">
 	  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 		<h1 class="text-2xl font-bold text-center text-blue-600 mb-8">
@@ -96,7 +96,7 @@
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`,b=()=>`
+`,p=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
       ${h()}
@@ -283,4 +283,4 @@
         ${g()}
       </div>
     </div>
-  `},$=()=>{let l=new r().isLogin();console.log(window.location.hash),console.log(window.location.pathname);let a=f()==="hash",o=a?window.location.hash.slice(1):location.pathname;return console.log("프로덕션입니다. path는 ",o),a||o.replace("/front_5th_chapter1-1",""),o==="/"?b():o==="/profile"?l?L():p():o==="/login"?l?b():p():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
+  `},$=()=>{let l=new r().isLogin();console.log(window.location.hash),console.log(window.location.pathname);let a=f()==="hash",o=a?window.location.hash.slice(1):location.pathname,e="";return a||(e="/front_5th_chapter1-1"),o===`${e}/`?p():o===`${e}/profile`?l?L():b():o===`${e}/login`?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
