@@ -1,4 +1,4 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const l of e)if(l.type==="childList")for(const n of l.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const l={};return e.integrity&&(l.integrity=e.integrity),e.referrerPolicy&&(l.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?l.credentials="include":e.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function a(e){if(e.ep)return;e.ep=!0;const l=o(e);fetch(e.href,l)}})();class i{constructor(){this.user=JSON.parse(localStorage.getItem("user"))||{}}get(){return this.user}set({username:s="",email:o="",bio:a=""}){this.user={username:s,email:o,bio:a},localStorage.setItem("user",JSON.stringify(this.user))}clear(){localStorage.removeItem("user")}isLogin(){return!!this.get().username}}const m=()=>{let t="history";return window.location.hash.includes("#")&&(t="hash"),t},b=()=>{let t=m();const s="/front_5th_chapter1-1";return console.log("프로덕션인가? ",!0),t?"":(console.log("리턴전"),s)},c=t=>{if(m()==="hash"){history.pushState(null,"","#/"+t.replace(/^\/+/,"")),window.dispatchEvent(new Event("hashchange"));return}const s=b();history.pushState(null,"",`${s}${t}`),window.dispatchEvent(new Event("popstate"))},u=new i;function y(t){var s,o,a,e;if(t.preventDefault(),t.target&&t.target.id==="login-form"){let l=(s=document.getElementById("username"))==null?void 0:s.value;u.set({username:l}),c("/profile")}if(t.target&&t.target.id==="profile-form"){let l=(o=document.getElementById("username"))==null?void 0:o.value,n=(a=document.getElementById("bio"))==null?void 0:a.value,w=(e=document.getElementById("email"))==null?void 0:e.value;u.set({username:l,bio:n,email:w}),alert("프로필이 업데이트되었습니다.")}}function L(t){if(t.target&&t.target.nodeName=="A"){t.preventDefault();const s=t.target.href.replace(location.origin,"");c(s)}t.target&&t.target.id==="logout"&&(u.clear(),c("/login"))}const $=()=>`
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const l of e)if(l.type==="childList")for(const n of l.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const l={};return e.integrity&&(l.integrity=e.integrity),e.referrerPolicy&&(l.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?l.credentials="include":e.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function a(e){if(e.ep)return;e.ep=!0;const l=o(e);fetch(e.href,l)}})();class i{constructor(){this.user=JSON.parse(localStorage.getItem("user"))||{}}get(){return this.user}set({username:s="",email:o="",bio:a=""}){this.user={username:s,email:o,bio:a},localStorage.setItem("user",JSON.stringify(this.user))}clear(){localStorage.removeItem("user")}isLogin(){return!!this.get().username}}const m=()=>{let t="history";return window.location.hash.includes("#")&&(t="hash",console.log("hash모드")),t},b=()=>{let t=m();const s="/front_5th_chapter1-1";return console.log("프로덕션인가? ",!0),t?"":(console.log("리턴전"),s)},c=t=>{if(m()==="hash"){history.pushState(null,"","#/"+t.replace(/^\/+/,"")),window.dispatchEvent(new Event("hashchange"));return}const s=b();history.pushState(null,"",`${s}${t}`),window.dispatchEvent(new Event("popstate"))},u=new i;function y(t){var s,o,a,e;if(t.preventDefault(),t.target&&t.target.id==="login-form"){let l=(s=document.getElementById("username"))==null?void 0:s.value;u.set({username:l}),c("/profile")}if(t.target&&t.target.id==="profile-form"){let l=(o=document.getElementById("username"))==null?void 0:o.value,n=(a=document.getElementById("bio"))==null?void 0:a.value,w=(e=document.getElementById("email"))==null?void 0:e.value;u.set({username:l,bio:n,email:w}),alert("프로필이 업데이트되었습니다.")}}function L(t){if(t.target&&t.target.nodeName=="A"){t.preventDefault();const s=t.target.href.replace(location.origin,"");c(s)}t.target&&t.target.id==="logout"&&(u.clear(),c("/login"))}const $=()=>`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div
       class="bg-white p-8 rounded-lg shadow-md w-full text-center"
@@ -56,7 +56,7 @@
 		</div>
 	  </div>
 	</main>
-  `,d="text-blue-600 font-bold",r="text-gray-600",h=()=>{let s=new i().isLogin();const o=b();return`
+  `,d="text-blue-600 font-bold",r="text-gray-600",g=()=>{let s=new i().isLogin();const o=b();return`
 	<header class="bg-blue-600 text-white p-4 sticky top-0">
 	  <h1 class="text-2xl font-bold">항해플러스</h1>
 	</header>
@@ -96,10 +96,10 @@
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`,g=()=>`
+`,h=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
-      ${h()}
+      ${g()}
       <main class="p-4">
         <div class="mb-4 bg-white rounded-lg shadow p-4">
           <textarea
@@ -219,7 +219,7 @@
 `,E=()=>{var e,l,n;const t=new i;let s=(e=t.get())==null?void 0:e.username,o=(l=t.get())==null?void 0:l.email,a=(n=t.get())==null?void 0:n.bio;return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
-        ${h()}
+        ${g()}
         <main class="p-4">
           <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">
@@ -283,4 +283,4 @@
         ${v()}
       </div>
     </div>
-  `},P=()=>{let s=new i().isLogin(),a=m()==="hash"?window.location.hash.slice(1):location.pathname;const e=b();return console.log(`${e}/profile`),a===`${e}/`?g():a===`${e}/profile`?s?E():f():a===`${e}/login`?s?g():f():$()},O=document.getElementById("root"),p=()=>{O.innerHTML=P()},x=document.getElementById("root");p();window.addEventListener("popstate",()=>p());window.addEventListener("hashchange",()=>p());x.addEventListener("submit",t=>y(t));x.addEventListener("click",t=>L(t));
+  `},P=()=>{let s=new i().isLogin(),a=m()==="hash"?window.location.hash.slice(1):location.pathname;const e=b();return console.log(`${e}/profile`),a===`${e}/`?h():a===`${e}/profile`?s?E():f():a===`${e}/login`?s?h():f():$()},O=document.getElementById("root"),p=()=>{O.innerHTML=P()},x=document.getElementById("root");p();window.addEventListener("popstate",()=>p());window.addEventListener("hashchange",()=>p());x.addEventListener("submit",t=>y(t));x.addEventListener("click",t=>L(t));
