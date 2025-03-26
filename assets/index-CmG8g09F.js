@@ -283,4 +283,4 @@
         ${g()}
       </div>
     </div>
-  `},$=()=>{let l=new r().isLogin();console.log(window.location.hash),console.log(window.location.pathname);let o=f()==="hash"?window.location.hash.slice(1):location.pathname;return o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
+  `},$=()=>{let l=new r().isLogin();console.log(window.location.hash),console.log(window.location.pathname);let o=f()==="hash"?window.location.hash.slice(1):location.pathname;return console.log("프로덕션입니다. path는 ",o),o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
