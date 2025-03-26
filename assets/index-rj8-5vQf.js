@@ -56,7 +56,7 @@
 		</div>
 	  </div>
 	</main>
-  `,d="text-blue-600 font-bold",r="text-gray-600",g=()=>{let s=new i().isLogin();const o=b();return`
+  `,d="text-blue-600 font-bold",r="text-gray-600",h=()=>{let s=new i().isLogin();const o=b();return`
 	<header class="bg-blue-600 text-white p-4 sticky top-0">
 	  <h1 class="text-2xl font-bold">항해플러스</h1>
 	</header>
@@ -96,10 +96,10 @@
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`,h=()=>`
+`,g=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
-      ${g()}
+      ${h()}
       <main class="p-4">
         <div class="mb-4 bg-white rounded-lg shadow p-4">
           <textarea
@@ -219,7 +219,7 @@
 `,E=()=>{var e,l,n;const t=new i;let s=(e=t.get())==null?void 0:e.username,o=(l=t.get())==null?void 0:l.email,a=(n=t.get())==null?void 0:n.bio;return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
-        ${g()}
+        ${h()}
         <main class="p-4">
           <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">
@@ -283,4 +283,4 @@
         ${v()}
       </div>
     </div>
-  `},P=()=>{let s=new i().isLogin(),a=m()==="hash"?window.location.hash.slice(1):location.pathname;const e=b();return console.log(`${e}/profile`),a===`${e}/`?h():a===`${e}/profile`?s?E():f():a===`${e}/login`?s?h():f():$()},O=document.getElementById("root"),p=()=>{O.innerHTML=P()},x=document.getElementById("root");p();window.addEventListener("popstate",()=>p());window.addEventListener("hashchange",()=>p());x.addEventListener("submit",t=>y(t));x.addEventListener("click",t=>L(t));
+  `},P=()=>{let s=new i().isLogin(),o=m()==="hash",a=o?window.location.hash.slice(1):location.pathname;const e=b();return o||console.log("해시모드아님"),console.log(`배포 url입니다.${e}`),a===`${e}/`?g():a===`${e}/profile`?s?E():f():a===`${e}/login`?s?g():f():$()},O=document.getElementById("root"),p=()=>{O.innerHTML=P()},x=document.getElementById("root");p();window.addEventListener("popstate",()=>p());window.addEventListener("hashchange",()=>p());x.addEventListener("submit",t=>y(t));x.addEventListener("click",t=>L(t));
