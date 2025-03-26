@@ -1,4 +1,4 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&o(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(e){if(e.ep)return;e.ep=!0;const s=a(e);fetch(e.href,s)}})();class r{constructor(){this.user=JSON.parse(localStorage.getItem("user"))||{}}get(){return this.user}set({username:l="",email:a="",bio:o=""}){this.user={username:l,email:a,bio:o},localStorage.setItem("user",JSON.stringify(this.user))}clear(){localStorage.removeItem("user")}isLogin(){return!!this.get().username}}const f=()=>{let t="history";return window.location.hash.includes("#")&&(t="hash"),t},c=t=>{if(f()==="hash"){history.pushState(null,"","#/"+t.replace(/^\/+/,"")),window.dispatchEvent(new Event("hashchange"));return}history.pushState(null,"",t),window.dispatchEvent(new Event("popstate"))},u=new r;function w(t){var l,a,o,e;if(t.preventDefault(),t.target&&t.target.id==="login-form"){let s=(l=document.getElementById("username"))==null?void 0:l.value;u.set({username:s}),c("profile")}if(t.target&&t.target.id==="profile-form"){let s=(a=document.getElementById("username"))==null?void 0:a.value,n=(o=document.getElementById("bio"))==null?void 0:o.value,x=(e=document.getElementById("email"))==null?void 0:e.value;u.set({username:s,bio:n,email:x}),alert("프로필이 업데이트되었습니다.")}}function y(t){if(t.target&&t.target.nodeName=="A"){t.preventDefault();const l=t.target.href.replace(location.origin,"");c(l)}t.target&&t.target.id==="logout"&&(u.clear(),c("login"))}const E=()=>`
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const l of e)if(l.type==="childList")for(const n of l.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&o(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const l={};return e.integrity&&(l.integrity=e.integrity),e.referrerPolicy&&(l.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?l.credentials="include":e.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function o(e){if(e.ep)return;e.ep=!0;const l=a(e);fetch(e.href,l)}})();class r{constructor(){this.user=JSON.parse(localStorage.getItem("user"))||{}}get(){return this.user}set({username:s="",email:a="",bio:o=""}){this.user={username:s,email:a,bio:o},localStorage.setItem("user",JSON.stringify(this.user))}clear(){localStorage.removeItem("user")}isLogin(){return!!this.get().username}}const f=()=>"/front_5th_chapter1-1",h=()=>{let t="history";return window.location.hash.includes("#")&&(t="hash"),t},c=t=>{if(h()==="hash"){history.pushState(null,"","#/"+t.replace(/^\/+/,"")),window.dispatchEvent(new Event("hashchange"));return}const s=f();history.pushState(null,"",`${s}${t}`),window.dispatchEvent(new Event("popstate"))},u=new r;function y(t){var s,a,o,e;if(t.preventDefault(),t.target&&t.target.id==="login-form"){let l=(s=document.getElementById("username"))==null?void 0:s.value;u.set({username:l}),c("profile")}if(t.target&&t.target.id==="profile-form"){let l=(a=document.getElementById("username"))==null?void 0:a.value,n=(o=document.getElementById("bio"))==null?void 0:o.value,w=(e=document.getElementById("email"))==null?void 0:e.value;u.set({username:l,bio:n,email:w}),alert("프로필이 업데이트되었습니다.")}}function L(t){if(t.target&&t.target.nodeName=="A"){t.preventDefault();const s=t.target.href.replace(location.origin,"");c(s)}t.target&&t.target.id==="logout"&&(u.clear(),c("login"))}const E=()=>`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div
       class="bg-white p-8 rounded-lg shadow-md w-full text-center"
@@ -92,7 +92,7 @@
 		</li>
 	  </ul>
 	</nav>`}
-  `,h=()=>`
+  `,v=()=>`
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
@@ -213,10 +213,10 @@
           </div>
         </div>
       </main>
-      ${h()}
+      ${v()}
     </div>
   </div>
-`,L=()=>{var e,s,n;const t=new r;let l=(e=t.get())==null?void 0:e.username,a=(s=t.get())==null?void 0:s.email,o=(n=t.get())==null?void 0:n.bio;return`
+`,$=()=>{var e,l,n;const t=new r;let s=(e=t.get())==null?void 0:e.username,a=(l=t.get())==null?void 0:l.email,o=(n=t.get())==null?void 0:n.bio;return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
         ${g()}
@@ -236,7 +236,7 @@
                   type="text"
                   id="username"
                   name="username"
-                  value=${l}
+                  value=${s}
                   class="w-full p-2 border rounded"
                 />
               </div>
@@ -280,7 +280,7 @@
             </form>
           </div>
         </main>
-        ${h()}
+        ${v()}
       </div>
     </div>
-  `},$=()=>{let l=new r().isLogin(),a=f()==="hash",o=a?window.location.hash.slice(1):location.pathname,e="";return a||(e="/front_5th_chapter1-1"),console.log(e),o===`${e}/`?p():o===`${e}/profile`?(console.log("path입니다!",o),l?L():b()):o===`${e}/login`?(console.log("path입니다!",o),l?p():b()):E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
+  `},P=()=>{let s=new r().isLogin(),o=h()==="hash"?window.location.hash.slice(1):location.pathname;const e=f();return o===`${e}/`?p():o===`${e}/profile`?s?$():b():o===`${e}/login`?s?p():b():E()},O=document.getElementById("root"),m=()=>{O.innerHTML=P()},x=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());x.addEventListener("submit",t=>y(t));x.addEventListener("click",t=>L(t));
