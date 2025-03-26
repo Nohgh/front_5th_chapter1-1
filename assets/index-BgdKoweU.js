@@ -56,7 +56,7 @@
 		</div>
 	  </div>
 	</main>
-  `,d="text-blue-600 font-bold",i="text-gray-600",g=()=>`
+  `,d="text-blue-600 font-bold",i="text-gray-600",h=()=>`
 	<header class="bg-blue-600 text-white p-4 sticky top-0">
 	  <h1 class="text-2xl font-bold">항해플러스</h1>
 	</header>
@@ -92,14 +92,14 @@
 		</li>
 	  </ul>
 	</nav>`}
-  `,h=()=>`
+  `,g=()=>`
   <footer class="bg-gray-200 p-4 text-center">
     <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
 `,p=()=>`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
-      ${g()}
+      ${h()}
       <main class="p-4">
         <div class="mb-4 bg-white rounded-lg shadow p-4">
           <textarea
@@ -213,13 +213,13 @@
           </div>
         </div>
       </main>
-      ${h()}
+      ${g()}
     </div>
   </div>
 `,L=()=>{var e,s,n;const t=new r;let l=(e=t.get())==null?void 0:e.username,a=(s=t.get())==null?void 0:s.email,o=(n=t.get())==null?void 0:n.bio;return`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
-        ${g()}
+        ${h()}
         <main class="p-4">
           <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">
@@ -280,7 +280,7 @@
             </form>
           </div>
         </main>
-        ${h()}
+        ${g()}
       </div>
     </div>
-  `},$=()=>{let l=new r().isLogin(),o=f()==="hash"?window.location.hash.slice(1):location.pathname;return o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
+  `},$=()=>{let l=new r().isLogin();console.log(window.location.hash),console.log(window.location.pathname);let o=f()==="hash"?window.location.hash.slice(1):location.pathname;return o==="/"?p():o==="/profile"?l?L():b():o==="/login"?l?p():b():E()},j=document.getElementById("root"),m=()=>{j.innerHTML=$()},v=document.getElementById("root");m();window.addEventListener("popstate",()=>m());window.addEventListener("hashchange",()=>m());v.addEventListener("submit",t=>w(t));v.addEventListener("click",t=>y(t));
