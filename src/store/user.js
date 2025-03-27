@@ -1,4 +1,5 @@
 export default class User {
+  //Design Pattern
   constructor() {
     this.user = JSON.parse(localStorage.getItem("user")) || {};
   }
