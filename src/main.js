@@ -4,6 +4,7 @@ import { render } from "./core/render";
 const root = document.getElementById("root");
 
 render();
+
 window.addEventListener("popstate", () => render());
 window.addEventListener("hashchange", () => render());
 
